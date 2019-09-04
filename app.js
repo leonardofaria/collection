@@ -39,22 +39,33 @@ document.onkeydown = function(evt) {
 };
 
 
-const computersButton = document.getElementById('computers-button');
+const computersButton = document.querySelectorAll('.computers-button');
 const computersContainer = document.getElementById('computers-container');
-const idevicesButton = document.getElementById('idevices-button');
+const idevicesButton = document.querySelectorAll('.idevices-button');
 const idevicesContainer = document.getElementById('idevices-container');
 const collectionLabel = document.getElementById('collection-label');
+const uiButtons = document.querySelectorAll('.computers-button, .idevices-button');
 
-computersButton.addEventListener('click', function(event) {
-  computersContainer.classList.remove('hidden');
-  idevicesContainer.classList.add('hidden');
+const toggleContainers = function() {
+  idevicesContainer.classList.toggle('hidden');
+  computersContainer.classList.toggle('hidden');
 
-  collectionLabel.innerHTML = 'Computers';
+  uiButtons.forEach(function(element) {
+    element.classList.toggle('text-gray-800');
+    element.classList.toggle('text-purple-600');
+  });
+}
+
+computersButton.forEach(function(element) {
+  element.addEventListener('click', function(event) {
+    collectionLabel.innerHTML = 'Computers';
+    toggleContainers();
+  });
 });
 
-idevicesButton.addEventListener('click', function(event) {
-  idevicesContainer.classList.remove('hidden');
-  computersContainer.classList.add('hidden');
-
-  collectionLabel.innerHTML = 'iDevices';
+idevicesButton.forEach(function(element) {
+  element.addEventListener('click', function(event) {
+    collectionLabel.innerHTML = 'iDevices';
+    toggleContainers();
+  });
 });
