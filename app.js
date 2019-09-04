@@ -69,3 +69,11 @@ idevicesButton.forEach(function(element) {
     toggleContainers();
   });
 });
+
+
+const menuButton = document.getElementById('menu-button');
+const menuContainer = document.getElementById('menu-container');
+
+menuButton.addEventListener('click', function(event) {
+  menuContainer.classList.toggle('hidden');
+});
