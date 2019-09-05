@@ -39,6 +39,14 @@ document.onkeydown = function(evt) {
 };
 
 
+const menuButton = document.getElementById('menu-button');
+const menuContainer = document.getElementById('menu-container');
+
+menuButton.addEventListener('click', function(event) {
+  menuContainer.classList.toggle('hidden');
+});
+
+
 const computersButton = document.querySelectorAll('.computers-button');
 const computersContainer = document.getElementById('computers-container');
 const idevicesButton = document.querySelectorAll('.idevices-button');
@@ -54,6 +62,10 @@ const toggleContainers = function() {
     element.classList.toggle('text-gray-800');
     element.classList.toggle('text-purple-600');
   });
+
+  if (!menuContainer.classList.contains('hidden')) {
+    menuContainer.classList.add('hidden');
+  }
 }
 
 computersButton.forEach(function(element) {
@@ -68,12 +80,4 @@ idevicesButton.forEach(function(element) {
     collectionLabel.innerHTML = 'iDevices';
     toggleContainers();
   });
-});
-
-
-const menuButton = document.getElementById('menu-button');
-const menuContainer = document.getElementById('menu-container');
-
-menuButton.addEventListener('click', function(event) {
-  menuContainer.classList.toggle('hidden');
 });
