@@ -81,3 +81,5 @@ idevicesButton.forEach(function(element) {
     toggleContainers();
   });
 });
+
+new WOW().init();
