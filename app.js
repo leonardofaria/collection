@@ -70,14 +70,16 @@ const toggleContainers = function() {
 
 computersButton.forEach(function(element) {
   element.addEventListener('click', function(event) {
-    collectionLabel.innerHTML = 'Computers';
+    const items = document.querySelectorAll('#computers-container .wow');
+    collectionLabel.innerHTML = 'Computers (' + items.length + ')';
     toggleContainers();
   });
 });
 
 idevicesButton.forEach(function(element) {
   element.addEventListener('click', function(event) {
-    collectionLabel.innerHTML = 'iDevices';
+    const items = document.querySelectorAll('#idevices-container .wow');
+    collectionLabel.innerHTML = 'iDevices (' + items.length + ')';
     toggleContainers();
   });
 });
