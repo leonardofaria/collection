@@ -86,6 +86,7 @@ idevicesButton.forEach(function(element) {
     const items = document.querySelectorAll('#idevices-container .card');
     collectionLabel.innerHTML = 'iDevices (' + items.length + ')';
     toggleContainers();
+    event.preventDefault();
   });
 });
 
