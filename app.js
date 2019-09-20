@@ -76,15 +76,20 @@ const toggleContainers = function() {
 computersButton.forEach(function(element) {
   element.addEventListener('click', function(event) {
     const items = document.querySelectorAll('#computers-container .card');
-    collectionLabel.innerHTML = 'Computers (' + items.length + ')';
+    const label = 'Computers (' + items.length + ')';
+    collectionLabel.innerHTML = label;
+    document.title = label + ' - Leo\'s Collection';
     toggleContainers();
+    event.preventDefault();
   });
 });
 
 idevicesButton.forEach(function(element) {
   element.addEventListener('click', function(event) {
     const items = document.querySelectorAll('#idevices-container .card');
-    collectionLabel.innerHTML = 'iDevices (' + items.length + ')';
+    const label = 'iDevices (' + items.length + ')'
+    collectionLabel.innerHTML = label;
+    document.title = label + ' - Leo\'s Collection';
     toggleContainers();
     event.preventDefault();
   });
