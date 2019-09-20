@@ -49,10 +49,15 @@ menuButton.addEventListener('click', function(event) {
 
 const computersButton = document.querySelectorAll('.computers-button');
 const computersContainer = document.getElementById('computers-container');
+const computersCards = document.getElementById('computers-cards');
+const computersGrid = document.getElementById('computers-grid');
 const idevicesButton = document.querySelectorAll('.idevices-button');
 const idevicesContainer = document.getElementById('idevices-container');
+const idevicesCards = document.getElementById('idevices-cards');
+const idevicesGrid = document.getElementById('idevices-grid');
 const collectionLabel = document.getElementById('collection-label');
 const uiButtons = document.querySelectorAll('.computers-button, .idevices-button');
+const modeButtons = document.querySelectorAll('.mode-button');
 
 const toggleContainers = function() {
   idevicesContainer.classList.toggle('hidden');
@@ -70,7 +75,7 @@ const toggleContainers = function() {
 
 computersButton.forEach(function(element) {
   element.addEventListener('click', function(event) {
-    const items = document.querySelectorAll('#computers-container .wow');
+    const items = document.querySelectorAll('#computers-container .card');
     collectionLabel.innerHTML = 'Computers (' + items.length + ')';
     toggleContainers();
   });
@@ -78,10 +83,34 @@ computersButton.forEach(function(element) {
 
 idevicesButton.forEach(function(element) {
   element.addEventListener('click', function(event) {
-    const items = document.querySelectorAll('#idevices-container .wow');
+    const items = document.querySelectorAll('#idevices-container .card');
     collectionLabel.innerHTML = 'iDevices (' + items.length + ')';
     toggleContainers();
   });
 });
 
-new WOW().init();
+const toggleMode = function(mode) {
+  if (mode === 'grid') {
+    computersCards.classList.add('hidden');
+    idevicesCards.classList.add('hidden');
+    computersGrid.classList.remove('hidden');
+    idevicesGrid.classList.remove('hidden');
+  } else {
+    computersCards.classList.remove('hidden');
+    idevicesCards.classList.remove('hidden');
+    computersGrid.classList.add('hidden');
+    idevicesGrid.classList.add('hidden');
+  }
+}
+
+modeButtons.forEach(function(element) {
+  element.addEventListener('click', function(event) {
+    const mode = element.dataset.mode;
+    toggleMode(mode);
+
+    modeButtons.forEach(function(button) {
+      button.classList.toggle('text-gray-800');
+      button.classList.toggle('text-purple-600');
+    });
+  });
+});
