@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css">
   <script src="https://unpkg.com/stein-expedite@0.0.1/dist/index.js"></script>
 </head>
-<body class="bg-gray-100 font-sans h-screen flex justify-center">
+<body class="bg-gray-100 flex justify-center">
 <header class="w-full m-0 fixed z-10">
 	<div class="bg-white shadow">
     <div class="container mx-auto px-4">
@@ -25,7 +25,7 @@
         </nav>
 
         <div class="hidden sm:flex sm:items-center">
-          <a href="#" class="modal-open text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
+          <a href="#" class="open-dialog text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
         </div>
 
         <div id="menu-button" class="sm:hidden cursor-pointer">
@@ -38,7 +38,7 @@
           <a href="?computers" class="computers-button underline text-purple-600 text-sm font-semibold hover:text-purple-600 mb-1">Computers</a>
           <a href="?devices" class="idevices-button underline text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">iDevices</a>
           <div class="flex justify-between items-center border-t-2 pt-2">
-            <a href="#" class="modal-open text-gray-800 text-sm font-semibold border px-4 py-1 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
+            <a href="#" class="open-dialog text-gray-800 text-sm font-semibold border px-4 py-1 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
           </div>
         </div>
       </nav>
@@ -211,36 +211,34 @@
   </section>
 </main>
 
-<div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-20">
-  <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+<section aria-labelledby="dialog-title" class="dialog bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg overflow-y-auto fixed z-30 mt-6">
+  <div class="py-4 text-left px-6">
+    <header class="flex justify-between items-center pb-3">
+      <h1 id="dialog-title" class="text-2xl text-gray-900 tracking-wide uppercase">About this collection</h1>
+      <button class="close-dialog modal-close cursor-pointer z-50" aria-label="Close About section">
+        <i class="fas fa-times" aria-hidden></i>
+      </button>
+    </header>
 
-  <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+    <p>I started using Macs when I was 12. I used to go to my brother's school after my high school classes to access (fast) Internet in Bondi Blue iMacs.</p>
 
-    <div class="modal-content py-4 text-left px-6">
-      <div class="flex justify-between items-center pb-3">
-        <h1 class="text-2xl text-gray-900 tracking-wide uppercase">About</h1>
-        <div class="modal-close cursor-pointer z-50">
-          <i class="fas fa-times"></i>
-        </div>
-      </div>
+    <p>A few years later I bought an iBook 700 Mhz to create websites using Flash. A few more years, a MacBook and then many others, that I got on craigslist or from friends. All items listed in this website are functional.</p>
 
-      <p>I started using Macs when I was 12. I used to go to my brother's school after my high school classes to access (fast) Internet in Bondi Blue iMacs.</p>
+    <h2 class="text-xl text-gray-700 mt-4 mb-2">About this website</h2>
 
-      <p>A few years later I bought an iBook 700 Mhz to create websites using Flash. A few more years, a MacBook and then many others, that I got on craigslist or from friends. All items listed in this website are functional.</p>
+    <p>I used to record the information about my collection in a GitHub gist but it was not enough. <br/>
+      Made this site with <a href="https://tailwindcss.com" class="underline text-blue-600">Tailwind CSS</a> (I didn't write one line of CSS!), based on a Google Sheet that a service called <a href="https://steinhq.com" class="underline text-blue-600">Stein</a> parses and gives to me. <a href="https://github.com/leonardofaria/collection" class="underline text-blue-600">Source code of the project.</a>
+    </p>
 
-      <h2 class="text-xl text-gray-700 mt-4 mb-2">About this website</h2>
-
-      <p>I used to record the information about my collection in a GitHub gist but it was not enough. <br/>
-        Made this site with <a href="https://tailwindcss.com" class="underline text-blue-600">Tailwind CSS</a> (I didn't write one line of CSS!), based on a Google Sheet that a service called <a href="https://steinhq.com" class="underline text-blue-600">Stein</a> parses and gives to me. <a href="https://github.com/leonardofaria/collection" class="underline text-blue-600">Source code of the project.</a>
-      </p>
-
-      <div class="flex mt-5">
-        <img src="images/macos.gif">
-      </div>
-    </div>
+    <footer class="flex mt-5">
+      <img src="images/macos.gif" alt="Made with MacOS">
+    </footer>
   </div>
-</div>
+</section>
 
+<div class="modal-overlay hidden absolute w-full h-full bg-gray-900 opacity-50 dialog-overlay z-20" tabindex="-1"></div>
+
+<script type="text/javascript" src="dialog.js"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
