@@ -14,15 +14,15 @@
 	<div class="bg-white shadow">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between py-4">
-        <div class="text-2xl text-gray-900 tracking-wide uppercase">
-          <i class="fab fa-apple mr-2"></i>
+        <h1 class="text-2xl text-gray-900 tracking-wide uppercase">
+          <i class="fab fa-apple mr-2" aria-hidden></i>
           Leo's Collection
-        </div>
+        </h1>
 
-        <div class="hidden sm:flex sm:items-center">
+        <nav aria-label="Main navigation" class="hidden sm:flex sm:items-center">
           <a href="?computers" class="computers-button cursor-pointer text-purple-600 text-sm font-semibold hover:text-purple-600 mr-4">Computers</a>
           <a href="?devices" class="idevices-button cursor-pointer text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">iDevices</a>
-        </div>
+        </nav>
 
         <div class="hidden sm:flex sm:items-center">
           <a href="#" class="modal-open text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <div id="menu-container" class="hidden sm:hidden bg-white border-t-2 py-2">
+      <nav aria-label="Main navigation" id="menu-container" class="hidden sm:hidden bg-white border-t-2 py-2">
         <div class="flex flex-col">
           <a href="?computers" class="computers-button text-purple-600 text-sm font-semibold hover:text-purple-600 mb-1">Computers</a>
           <a href="?devices" class="idevices-button text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1">iDevices</a>
@@ -41,22 +41,22 @@
             <a href="#" class="modal-open text-gray-800 text-sm font-semibold border px-4 py-1 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
           </div>
         </div>
-      </div>
+      </nav>
     </div>
   </div>
 </header>
 
 <main class="container mx-auto px-4 mt-24 mb-7">
   <div class="flex items-center justify-between">
-    <p id="collection-label" class="text-3xl text-purple-600">Computers</p>
+    <h2 id="collection-label" class="text-3xl text-purple-600">Computers</h2>
 
     <div class="inline-flex">
       <button class="bg-gray-300 hover:bg-gray-400 text-purple-600 font-bold py-2 px-4 rounded-l inline-flex items-center mode-button" data-mode="cards">
-        <i class="fas fa-th w-4 h-4 mr-2"></i>
+        <i class="fas fa-th w-4 h-4 mr-2" aria-hidden></i>
         <span>Cards</span>
       </button>
       <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r inline-flex items-center mode-button" data-mode="grid">
-        <i class="fas fa-table w-4 h-4 mr-2"></i>
+        <i class="fas fa-table w-4 h-4 mr-2" aria-hidden></i>
         <span>Grid</span>
       </button>
     </div>
@@ -69,7 +69,7 @@
           <img class="shadow-xl w-full h-auto" src="{{photo}}">
           <div>
             <div class="p-4 md:p-5">
-              <p class="font-bold text-xl md:text-2xl">{{computer}}</p>
+              <h3 class="font-bold text-xl md:text-2xl">{{computer}}</h3>
               <p class="text-gray-700 md:text-lg overflow-y-auto h-32">
                 {{notes}}
               </p>
@@ -90,7 +90,7 @@
                 </div>
                 <a href="{{reference}}" class="mt-3 sm:mt-0 py-2 px-5 md:py-2 md:px-4 bg-indigo-700 hover:bg-indigo-600 font-bold text-white rounded-lg shadow-md inline-flex items-center" target="_blank" title="Read more about {{computer}} history in an external website">
                   <span>History</span>
-                  <i class="fas fa-external-link-alt w-4 h-4 ml-2"></i>
+                  <i class="fas fa-external-link-alt w-4 h-4 ml-2" aria-label="Open in a new window"></i>
                 </a>
               </div>
             </div>
@@ -143,7 +143,7 @@
           <img class="shadow-xl w-full h-auto" src="{{photo}}">
           <div>
             <div class="p-4 md:p-5">
-              <p class="font-bold text-xl md:text-2xl">{{device}}</p>
+              <h3 class="font-bold text-xl md:text-2xl">{{device}}</h3>
               <p class="text-gray-700 md:text-lg overflow-y-auto h-32">
                 {{notes}}
               </p>
