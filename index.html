@@ -172,29 +172,29 @@
         <thead>
           <tr class="bg-indigo-600">
             <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Computer</th>
+            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Device</th>
             <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
             <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
             <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
           </tr>
         </thead>
-        <tbody data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/Computers" data-stein-limit="20">
+        <tbody data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/iDevices" data-stein-limit="20">
           <tr class="hover:bg-blue-100">
             <td class="border-b border-grey-light w-32">
               <img class="shadow-xl" src="{{photo}}">
             </td>
             <td class="py-4 px-6 w-32 border-b border-grey-light">
               <a href="{{reference}}">
-                {{computer}}
+                {{device}}
               </a>
             </td>
             <td class="py-4 px-6 w-16 border-b border-grey-light">
               {{bought_at}}
             </td>
-            <td class="py-4 px-6 w-40 border-b border-grey-light">
+            <td class="py-4 px-6 w-16 border-b border-grey-light">
               {{hardware}}
             </td>
-            <td class="py-4 px-6 w-48 border-b border-grey-light">
+            <td class="py-4 px-6 w-56 border-b border-grey-light">
               <div class="overflow-y-auto h-32">
                 {{notes}}
               </div>
