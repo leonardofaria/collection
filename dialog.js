@@ -25,6 +25,7 @@ Dialog.prototype.open = function() {
 	this.dialogEl.classList.remove('hidden');
 	this.overlayEl.removeAttribute('aria-hidden');
 	this.overlayEl.classList.remove('hidden');
+	document.body.classList.add('overflow-hidden');
 
 	this.focusedElBeforeOpen = document.activeElement;
 
@@ -44,7 +45,8 @@ Dialog.prototype.close = function() {
 	this.dialogEl.setAttribute('aria-hidden', true);
 	this.dialogEl.classList.add('hidden');
 	this.overlayEl.setAttribute('aria-hidden', true);
-	this.overlayEl.classList.add('hidden');	
+	this.overlayEl.classList.add('hidden');
+	document.body.classList.remove('overflow-hidden');
 
 	if ( this.focusedElBeforeOpen ) {
 		this.focusedElBeforeOpen.focus();
