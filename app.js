@@ -146,10 +146,10 @@ modeButtons.forEach(function(element) {
 
 const params = new URLSearchParams(location.search);
 
-if (params.get('collection') !== '') {
+if (params.get('collection')) {
   showCollection(params.get('collection'));
 }
 
-if (params.get('mode') !== '') {
+if (params.get('mode')) {
   toggleMode(params.get('mode'));
 }
