@@ -45,10 +45,10 @@ const showCollection = function(collection) {
     const dataCollection = element.dataset.collection;
     if (dataCollection === collection) {
       element.classList.remove('text-gray-800');
-      element.classList.add('text-purple-600');
+      element.classList.add('text-purple-800');
     } else {
       element.classList.add('text-gray-800');
-      element.classList.remove('text-purple-600');
+      element.classList.remove('text-purple-800');
     }
   });
 
@@ -92,10 +92,10 @@ const toggleMode = function(mode) {
     const dataMode = button.dataset.mode;
     if (dataMode === mode) {
       button.classList.remove('text-gray-800');
-      button.classList.add('text-purple-600');
+      button.classList.add('text-purple-800');
     } else {
       button.classList.add('text-gray-800');
-      button.classList.remove('text-purple-600');
+      button.classList.remove('text-purple-800');
     }
   });
 
