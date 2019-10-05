@@ -120,11 +120,11 @@
       <table class="text-left w-full" style="border-collapse:collapse" aria-label="List of computers of the collection">
         <thead>
           <tr class="bg-indigo-600">
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Computer</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Computer</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
           </tr>
         </thead>
         <tbody data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/Computers" data-stein-limit="20">
@@ -133,7 +133,7 @@
               <img class="shadow-xl" src="{{photo}}" alt="{{computer}}'s photo">
             </td>
             <td class="py-4 px-6 w-32 border-b border-grey-light">
-              <a href="{{reference}}" class="underline text-blue-600">
+              <a href="{{reference}}" class="underline text-blue-600" title="Read more about {{computer}} history in an external website">
                 {{computer}}
               </a>
             </td>
@@ -194,11 +194,11 @@
       <table class="text-left w-full" style="border-collapse:collapse" aria-label="List of iDevices of the collection">
         <thead>
           <tr class="bg-indigo-600">
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Device</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Device</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
           </tr>
         </thead>
         <tbody data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/iDevices" data-stein-limit="20">
@@ -207,7 +207,7 @@
               <img class="shadow-xl" src="{{photo}}" alt="{{device}}'s photo">
             </td>
             <td class="py-4 px-6 w-32 border-b border-grey-light">
-              <a href="{{reference}}">
+              <a href="{{reference}}" class="underline text-blue-600" title="Read more about {{device}} history in an external website">
                 {{device}}
               </a>
             </td>
