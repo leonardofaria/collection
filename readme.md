@@ -2,8 +2,8 @@
 
 This is a simple website I made for my Apple Collection using Stein, Tailwind CSS and Netlify.
 
-- Live website: https://collection.leonardofaria.net
-- Blog post: [Creating a website for my Apple Collection](https://leonardofaria.net/2019/10/17/creating-a-website-for-my-apple-collection/)
+- Live website: [https://collection.leonardofaria.net](http://bit.ly/collection-website)
+- Blog post: [Creating a website for my Apple Collection](http://bit.ly/collection-post)
 
 ## Todo
 
