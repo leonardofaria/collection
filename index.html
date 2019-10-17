@@ -26,38 +26,27 @@
   <meta name="og:site_name" content="Leo's Collection">
   <meta name="og:type" content="website">
 </head>
-<body class="bg-gray-100 font-sans h-screen flex justify-center">
+<body class="bg-gray-100 flex justify-center">
 <header class="w-full m-0 fixed z-10">
 	<div class="bg-white shadow">
     <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between py-4">
-        <div class="text-2xl text-gray-900 tracking-wide uppercase">
-          <i class="fab fa-apple mr-2"></i>
+      <div class="flex items-center justify-between py-4 flex-wrap">
+        <h1 class="text-2xl text-gray-900 tracking-wide uppercase">
+          <i class="fab fa-apple mr-2" aria-hidden="true"></i>
           Leo's Collection
-        </div>
+        </h1>
 
-        <div class="hidden sm:flex sm:items-center">
-          <a class="computers-button cursor-pointer text-purple-600 text-sm font-semibold hover:text-purple-600 mr-4" data-collection="computers">Computers</a>
-          <a class="idevices-button cursor-pointer text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4" data-collection="iDevices">iDevices</a>
-        </div>
+        <button aria-label="Show mobile menu" id="menu-button" class="sm:hidden cursor-pointer">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
 
-        <div class="hidden sm:flex sm:items-center">
-          <a href="#" class="modal-open text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
-        </div>
-
-        <div id="menu-button" class="sm:hidden cursor-pointer">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
-
-      <div id="menu-container" class="hidden sm:hidden bg-white border-t-2 py-2">
-        <div class="flex flex-col">
-          <a href="#" class="computers-button text-purple-600 text-sm font-semibold hover:text-purple-600 mb-1" data-collection="computers">Computers</a>
-          <a href="#" class="idevices-button text-gray-800 text-sm font-semibold hover:text-purple-600 mb-1" data-collection="iDevices">iDevices</a>
-          <div class="flex justify-between items-center border-t-2 pt-2">
-            <a href="#" class="modal-open text-gray-800 text-sm font-semibold border px-4 py-1 rounded-lg hover:text-purple-600 hover:border-purple-600">About</a>
-          </div>
-        </div>
+        <nav aria-label="Main navigation" id="menu-container" class="hidden md:flex flex-grow bg-white border-t-2 mt-2 py-2 md:border-t-0 md:py-0 md:mt-0 md:ml-5">
+          <ul class="flex flex-col md:flex-row md:flex-grow">
+            <li class="md:mx-2"><a href="?collection=computers" class="computers-button underline text-purple-800 text-sm font-semibold hover:text-purple-800 mb-1" data-collection="computers">Computers</a></li>
+            <li class="md:mx-2 flex-grow"><a href="?collection=devices" class="idevices-button underline text-gray-700 text-sm font-semibold hover:text-purple-800 mb-1" data-collection="iDevices">iDevices</a></li>
+            <li class="mt-2 pt-4 border-t-2 md:mt-0 md:pt-0 md:border-t-0"><a href="#" class="open-dialog text-gray-700 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-800 hover:border-purple-600">About</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -65,16 +54,16 @@
 
 <main class="container mx-auto px-4 mt-24 mb-7">
   <div class="flex items-center justify-between">
-    <p id="collection-label" class="text-3xl text-purple-600">Computers</p>
+    <h2 id="collection-label" class="text-3xl text-purple-800">Computers</h2>
 
     <div class="inline-flex">
-      <button class="bg-gray-300 hover:bg-gray-400 text-purple-600 font-bold py-2 px-4 rounded-l inline-flex items-center mode-button" data-mode="cards">
-        <i class="fas fa-th w-4 h-4 mr-2"></i>
-        <span>Cards</span>
+      <button class="bg-gray-300 hover:bg-gray-400 text-purple-800 font-bold py-2 px-4 rounded-l inline-flex items-center mode-button" data-mode="cards">
+        <i class="fas fa-th w-4 h-4 md:mr-2" aria-hidden="true"></i>
+        <span class="hidden md:block">Cards</span>
       </button>
-      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r inline-flex items-center mode-button" data-mode="grid">
-        <i class="fas fa-table w-4 h-4 mr-2"></i>
-        <span>Grid</span>
+      <button class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded-r inline-flex items-center mode-button" data-mode="grid">
+        <i class="fas fa-table w-4 h-4 md:mr-2" aria-hidden="true"></i>
+        <span class="hidden md:block">Grid</span>
       </button>
     </div>
   </div>
@@ -83,29 +72,32 @@
     <div id="computers-cards" data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/Computers" data-stein-limit="20" class="flex flex-wrap -mx-2">
       <div class="w-full sm:w-1/2 lg:w-1/3 px-2 mb-3 card">
         <div class="bg-white shadow-xl md:flex md:flex-col overflow-hidden rounded-lg">
-          <img class="shadow-xl w-full h-auto" src="{{photo}}">
+          <img class="shadow-xl w-full h-auto" src="{{photo}}" alt="{{computer}}'s photo">
           <div>
             <div class="p-4 md:p-5">
-              <p class="font-bold text-xl md:text-2xl">{{computer}}</p>
-              <p class="text-gray-700 md:text-lg overflow-y-auto h-32">
+              <h3 class="font-bold text-xl md:text-2xl">{{computer}}</h3>
+              <p class="text-gray-700 md:text-lg md:overflow-y-auto md:h-64" tabindex="0">
                 {{notes}}
               </p>
             </div>
             <div class="flex p-4 border-t border-gray-300 text-gray-700">
               <div class="flex-1 inline-flex items-center">
-                  <i class="fas fa-memory text-gray-600 mr-3"></i>
+                  <i class="fas fa-memory text-gray-700 mr-3"></i>
                   <p>{{hardware}}</p>
               </div>
             </div>
             <div class="p-4 md:p-5 bg-gray-100">
               <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                  <div class="text-gray-600 text-sm md:text-base mt-1">
-                    <span class="text-xs uppercase font-bold text-gray-600 tracking-wide">Bought at</span><br>
+                  <div class="text-gray-700 text-sm md:text-base mt-1">
+                    <span class="text-xs uppercase font-bold text-gray-700 tracking-wide">Bought at</span><br>
                     {{bought_at}}
                   </div>
                 </div>
-                <a href="{{reference}}" class="mt-3 sm:mt-0 py-2 px-5 md:py-2 md:px-4 bg-indigo-700 hover:bg-indigo-600 font-bold text-white rounded-lg shadow-md">History</a>
+                <a href="{{reference}}" class="mt-3 sm:mt-0 py-2 px-5 md:py-2 md:px-4 bg-indigo-700 hover:bg-indigo-600 font-bold text-white rounded-lg shadow-md inline-flex items-center" target="_blank" title="Read more about {{computer}} history in an external website">
+                  <span>History</span>
+                  <i class="fas fa-external-link-alt w-4 h-4 ml-2" aria-label="Open in a new window"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -114,23 +106,23 @@
     </div>
 
     <div id="computers-grid" class="bg-white rounded-lg shadow-xl overflow-hidden hidden">
-      <table class="text-left w-full" style="border-collapse:collapse">
+      <table class="text-left w-full" style="border-collapse:collapse" aria-label="List of computers of the collection">
         <thead>
           <tr class="bg-indigo-600">
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Computer</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Computer</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
           </tr>
         </thead>
         <tbody data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/Computers" data-stein-limit="20">
           <tr class="hover:bg-blue-100">
             <td class="border-b border-grey-light w-32">
-              <img class="shadow-xl" src="{{photo}}">
+              <img class="shadow-xl" src="{{photo}}" alt="{{computer}}'s photo">
             </td>
             <td class="py-4 px-6 w-32 border-b border-grey-light">
-              <a href="{{reference}}">
+              <a href="{{reference}}" class="underline text-blue-600" title="Read more about {{computer}} history in an external website">
                 {{computer}}
               </a>
             </td>
@@ -141,9 +133,7 @@
               {{hardware}}
             </td>
             <td class="py-4 px-6 w-48 border-b border-grey-light">
-              <div class="overflow-y-auto h-32">
-                {{notes}}
-              </div>
+              {{notes}}
             </td>
           </tr>
         </table>
@@ -154,29 +144,32 @@
     <div id="idevices-cards" data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/iDevices" data-stein-limit="20" class="flex flex-wrap mt-5 -mx-2">
       <div class="w-full sm:w-1/2 lg:w-1/3 px-2 mb-3 card">
         <div class="bg-white shadow-xl md:flex md:flex-col overflow-hidden rounded-lg">
-          <img class="shadow-xl w-full h-auto" src="{{photo}}">
+          <img class="shadow-xl w-full h-auto" src="{{photo}}" alt="{{device}}'s photo">
           <div>
             <div class="p-4 md:p-5">
-              <p class="font-bold text-xl md:text-2xl">{{device}}</p>
-              <p class="text-gray-700 md:text-lg overflow-y-auto h-32">
+              <h3 class="font-bold text-xl md:text-2xl">{{device}}</h3>
+              <p class="text-gray-700 md:text-lg md:overflow-y-auto md:h-64" tabindex="0">
                 {{notes}}
               </p>
             </div>
             <div class="flex p-4 border-t border-gray-300 text-gray-700">
               <div class="flex-1 inline-flex items-center">
-                  <i class="fas fa-memory text-gray-600 mr-3"></i>
+                  <i class="fas fa-memory text-gray-700 mr-3"></i>
                   <p>{{hardware}}</p>
               </div>
             </div>
             <div class="p-4 md:p-5 bg-gray-100">
               <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                  <div class="text-gray-600 text-sm md:text-base mt-1">
-                    <span class="text-xs uppercase font-bold text-gray-600 tracking-wide">Bought at</span><br>
+                  <div class="text-gray-700 text-sm md:text-base mt-1">
+                    <span class="text-xs uppercase font-bold text-gray-700 tracking-wide">Bought at</span><br>
                     {{bought_at}}
                   </div>
                 </div>
-                <a href="{{reference}}" class="mt-3 sm:mt-0 py-2 px-5 md:py-2 md:px-4 bg-indigo-700 hover:bg-indigo-600 font-bold text-white rounded-lg shadow-md">History</a>
+                <a href="{{reference}}" class="mt-3 sm:mt-0 py-2 px-5 md:py-2 md:px-4 bg-indigo-700 hover:bg-indigo-600 font-bold text-white rounded-lg shadow-md inline-flex items-center" target="_blank" title="Read more about {{device}} history in an external website">
+                  <span>History</span>
+                  <i class="fas fa-external-link-alt w-4 h-4 ml-2" aria-label="Open in a new window"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -185,23 +178,23 @@
     </div>
 
     <div id="idevices-grid" class="bg-white rounded-lg shadow-xl overflow-hidden hidden">
-      <table class="text-left w-full" style="border-collapse:collapse">
+      <table class="text-left w-full" style="border-collapse:collapse" aria-label="List of iDevices of the collection">
         <thead>
           <tr class="bg-indigo-600">
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Device</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
-            <th class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Photo</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Device</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Bought at</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light w-auto">Hardware</th>
+            <th scope="col" class="py-4 px-6 font-sans font-bold tracking-wide uppercase text-sm text-white border-b border-grey-light">Notes</th>
           </tr>
         </thead>
         <tbody data-stein-url="https://api.steinhq.com/v1/storages/5d5ca196bb4eaf04c5eaa28a/iDevices" data-stein-limit="20">
           <tr class="hover:bg-blue-100">
             <td class="border-b border-grey-light w-32">
-              <img class="shadow-xl" src="{{photo}}">
+              <img class="shadow-xl" src="{{photo}}" alt="{{device}}'s photo">
             </td>
             <td class="py-4 px-6 w-32 border-b border-grey-light">
-              <a href="{{reference}}">
+              <a href="{{reference}}" class="underline text-blue-600" title="Read more about {{device}} history in an external website">
                 {{device}}
               </a>
             </td>
@@ -212,9 +205,7 @@
               {{hardware}}
             </td>
             <td class="py-4 px-6 w-56 border-b border-grey-light">
-              <div class="overflow-y-auto h-32">
-                {{notes}}
-              </div>
+              {{notes}}
             </td>
           </tr>
         </table>
@@ -222,36 +213,36 @@
   </section>
 </main>
 
-<div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-20">
-  <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+<section aria-labelledby="dialog-title" class="dialog md:max-w-md mx-auto fixed z-30 md:py-6 max-h-screen overflow-y-auto scrolling-touch" tabindex="0">
+  <div class="bg-white rounded shadow-lg py-4 text-left px-6">
+    <header class="flex justify-between items-center pb-3">
+      <h1 id="dialog-title" class="text-2xl text-gray-900 tracking-wide uppercase">About this collection</h1>
+      <button class="close-dialog modal-close cursor-pointer z-50" aria-label="Close About section">
+        <i class="fas fa-times" aria-hidden></i>
+      </button>
+    </header>
 
-  <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-
-    <div class="modal-content py-4 text-left px-6">
-      <div class="flex justify-between items-center pb-3">
-        <h1 class="text-2xl text-gray-900 tracking-wide uppercase">About</h1>
-        <div class="modal-close cursor-pointer z-50">
-          <i class="fas fa-times"></i>
-        </div>
-      </div>
-
-      <p>I started using Macs when I was 12. I used to go to my brother's school after my high school classes to access (fast) Internet in Bondi Blue iMacs.</p>
+    <article class="">
+      <p class="mb-2">I started using Macs when I was 12. I used to go to my brother's school after my high school classes to access (fast) Internet in Bondi Blue iMacs.</p>
 
       <p>A few years later I bought an iBook 700 Mhz to create websites using Flash. A few more years, a MacBook and then many others, that I got on craigslist or from friends. All items listed in this website are functional.</p>
 
       <h2 class="text-xl text-gray-700 mt-4 mb-2">About this website</h2>
 
-      <p>I used to record the information about my collection in a GitHub gist but it was not enough. <br/>
-        Made this site with <a href="https://tailwindcss.com">Tailwind CSS</a> (I didn't write one line of CSS!), based on a Google Sheet that a service called <a href="https://steinhq.com">Stein</a> parses and gives to me. <a href="https://github.com/leonardofaria/collection">Source code of the project.</a>
-      </p>
+      <p class="mb-2">I used to record the information about my collection in a GitHub gist but it was not enough.</p>
 
-      <div class="flex mt-5">
-        <img src="images/macos.gif">
-      </div>
-    </div>
+      <p>Made this site with <a href="https://tailwindcss.com" class="underline text-blue-600">Tailwind CSS</a> (I didn't write one line of CSS!), based on a Google Sheet that a service called <a href="https://steinhq.com" class="underline text-blue-600">Stein</a> parses and gives to me. <a href="https://github.com/leonardofaria/collection" class="underline text-blue-600">Source code of the project.</a></p>
+    </article>
+
+    <footer class="flex mt-5">
+      <img src="images/macos.gif" alt="Made with MacOS">
+    </footer>
   </div>
-</div>
+</section>
 
+<div class="modal-overlay hidden absolute w-full h-full bg-gray-900 opacity-50 dialog-overlay z-20" tabindex="-1"></div>
+
+<script type="text/javascript" src="dialog.js"></script>
 <script type="text/javascript" src="app.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
